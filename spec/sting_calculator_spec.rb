@@ -25,4 +25,13 @@ RSpec.describe StringCalculator do
       expect(output).to eq(3)
     end
   end
+
+  context "when the input string contains multiple numbers" do
+    subject(:output) { described_class.calculate("1,2,3") }
+    
+    it "should return 5 when input is '1,2,3'" do
+      expect(output).to eq(6)
+    end
+
+  end
 end
