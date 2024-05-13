@@ -16,6 +16,13 @@ RSpec.describe StringCalculator do
     it "should return 3" do
       expect(output).to eq(3)
     end
+  end
 
+  context "when the input string contains 2 numbers" do
+    subject(:output) { described_class.calculate("1,2") }
+
+    it "should return 3" do
+      expect(output).to eq(3)
+    end
   end
 end
