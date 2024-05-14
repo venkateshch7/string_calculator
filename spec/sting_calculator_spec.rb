@@ -43,6 +43,25 @@ RSpec.describe StringCalculator do
         expect(output).to eq(14)
       end
     end
+  end
+
+  describe 'when the input string contains new line character between numbers' do
+    
+    context 'when the input string is 1\n2,3' do
+      let(:input) { '1\n2,3' }    
+      
+      it 'should return 6' do
+        expect(output).to eq(6)
+      end
+    end
+
+    context 'when the input string is 12,3\n7' do
+      let(:input) { '12,3\n7' }    
+      
+      it 'should return 22' do
+        expect(output).to eq(22)
+      end
+    end
 
   end
 end
