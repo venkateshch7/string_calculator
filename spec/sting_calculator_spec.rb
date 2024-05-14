@@ -95,5 +95,13 @@ RSpec.describe StringCalculator do
         expect{output}.to raise_error('invalid input: 1,\n')
       end
     end
+
+    context 'when the input in is ,\n1' do
+      let(:input) { '\n,1' }    
+      
+      it 'should return error' do
+        expect{output}.to raise_error('invalid input: \n,1')
+      end
+    end
   end
 end
