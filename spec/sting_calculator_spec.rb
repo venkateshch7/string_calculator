@@ -62,6 +62,17 @@ RSpec.describe StringCalculator do
         expect(output).to eq(22)
       end
     end
-
   end
+
+  describe 'when the input string contains contains a delimiter' do
+    
+    context 'when the input in is //;\n1;2' do
+      let(:input) { '//;\n1;2' }    
+      
+      it 'should return 3' do
+        expect(output).to eq(3)
+      end
+    end
+  end
+  
 end
