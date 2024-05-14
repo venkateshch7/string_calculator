@@ -74,5 +74,16 @@ RSpec.describe StringCalculator do
       end
     end
   end
-  
+
+  describe 'when the input string contains contains negative number' do
+    
+    context 'when the input in is //;\n1;-2' do
+      let(:input) { '//;\n1;-2' }    
+      
+      it 'should return error' do
+        expect{output}.to raise_error('negative numbers not allowed: -2')
+      end
+    end
+  end
+
 end
