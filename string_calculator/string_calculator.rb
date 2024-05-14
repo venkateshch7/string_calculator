@@ -24,7 +24,8 @@ class StringCalculator
 
 
     def self.check_for_invalid_input(value,delimiter)
-        if value.include?(',\n')
+        invalid_values = [',\n','\n,']
+        if invalid_values.any? { |invalid_value| value.include?(invalid_value) }
             raise "invalid input: #{value}"
         end                
     end
