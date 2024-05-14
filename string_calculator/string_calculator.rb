@@ -13,11 +13,19 @@ class StringCalculator
             delimiter = value[2...value.length-1].split('\n').first
             value = value.split(delimiter+'\n').last
         end
+        self.check_for_invalid_input(value,delimiter)
         [delimiter, value]
     end
 
     def self.check_for_negative_numbers(values)
         negative_values = values.map(&:to_i).select{|a| a < 0}
         raise "negative numbers not allowed: #{negative_values.join(',')}" if negative_values.length > 0
+    end
+
+
+    def self.check_for_invalid_input(value,delimiter)
+        if value.include?(',\n')
+            raise "invalid input: #{value}"
+        end                
     end
 end
